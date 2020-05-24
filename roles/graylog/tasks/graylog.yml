@@ -1,0 +1,115 @@
+- name: install graylog requirements
+  apt:
+    state: present
+    package:
+      - apt-transport-https
+      - openjdk-8-jre-headless
+      - uuid-runtime
+
+- name: add mongodb repository gpg key
+  apt_key:
+    keyserver: hkp://keyserver.ubuntu.com:80
+    id: 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+
+- name: add mongodb APT repository
+  apt_repository:
+    repo: 'deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/3.6 main'
+    state: present
+    filename: 'mongodb-org-3.6'
+    update_cache: yes
+
+- name: install mongodb-org package
+  apt:
+    pkg: "mongodb-org"
+    state: present
+
+
+- name: enable and restart mongodb service
+  systemd:
+    name: mongod
+    enabled: yes
+    state: restarted
+    daemon_reload: yes
+
+- name: add elasticsearch APT repository GPG key
+  apt_key:
+    url: 'https://artifacts.elastic.co/GPG-KEY-elasticsearch'
+    state: present
+
+- name: add elasticsearch APT repository
+  apt_repository:
+    repo: 'deb https://artifacts.elastic.co/packages/5.x/apt stable main'
+    state: present
+    filename: 'elastic-5.x'
+    update_cache: yes
+
+- name: install elasticsearch
+  apt:
+    pkg: elasticsearch
+    state: present
+
+- name: configure elasticsearch
+  template:
+    src: etc_elasticsearch_elasticsearch.yml.j2
+    dest: /etc/elasticsearch/elasticsearch.yml
+
+- name: enable and restart elasticsearch service
+  systemd:
+    name: elasticsearch
+    enabled: yes
+    state: restarted
+    daemon_reload: yes
+
+- name: download graylog-2.4-repository deb package
+  get_url:
+    url: "https://packages.graylog2.org/repo/packages/graylog-2.4-repository_latest.deb"
+    dest: "/root/graylog-2.4-repository_latest.deb"
+
+
+- name: install graylog-2.4-repository package
+  apt:
+    deb: "/root/graylog-2.4-repository_latest.deb"
+    state: present
+    dpkg_options: "force-all"
+  register: install_repo
+
+- name: update APT cache
+  apt:
+    update_cache: yes
+  when: install_repo.changed
+
+- name: install graylog-server package
+  apt:
+    pkg: "graylog-server"
+    state: latest
+
+- name: generate graylog password hash
+  shell: echo -n {{ graylog_root_password }} | sha256sum | cut -d" " -f1
+  register: graylog_root_password_hash
+  changed_when: false
+
+- name: copy graylog server configuration
+  template:
+    src: etc_graylog_server_server.conf
+    dest: /etc/graylog/server/server.conf
+
+- name: copy graylog logging configuration (log4j2)
+  template:
+    src: etc_graylog_server_log4j.xml.j2
+    dest: /etc/graylog/server/log4j2.xml
+
+
+- name: enable and restart graylog-server service
+  systemd:
+    name: graylog-server
+    enabled: yes
+    state: restarted
+    daemon_reload: yes
+
+- name: configure rsyslog to send logs to local UDP 5140
+  template:
+    src: etc_rsyslog.d_local-to-local-udp.conf.j2
+    dest: /etc/rsyslog.d/local-to-local-udp.conf
+  notify: restart rsyslog service
+
+

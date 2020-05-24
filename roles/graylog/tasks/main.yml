@@ -1,0 +1,2 @@
+- include: graylog.yml
+  tags: graylog
