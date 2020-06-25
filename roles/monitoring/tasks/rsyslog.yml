@@ -39,6 +39,35 @@
     regexp: '^\*\.\*'
   notify: restart rsyslog
 
-# apply rsyslog configuration
+##### SYSLOG FOWARDING OVER TCP+TLS #####
+
+- name: install TLS protocol support for rsyslog 
+  apt:
+    package: "rsyslog-gnutls"
+    state: present
+
+- name: create rsyslog certs/keys directory
+  file:
+    state: directory
+    path: /etc/ssl/syslog/
+
+- name: upload syslog TLS certificate/key
+  copy:
+    src: "{{ playbook_dir }}/certificates/{{ ansible_hostname }}.{{ item }}"
+    dest: "/etc/ssl/syslog/"
+    mode: 0600
+    owner: root
+    group: root
+  with_items:
+    - "crt"
+    - "pem"
+  notify: restart rsyslog
+
+- name: copy SSL/TLS configuration
+  template: src=etc_rsyslog.d_ssl.conf dest=/etc/rsyslog.d/ssl.conf
+  notify: restart rsyslog
+
+#####
+
 - name: run all notified handlers now
   meta: flush_handlers
