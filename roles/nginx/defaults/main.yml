@@ -1,0 +1,6 @@
+---
+
+##### NGINX WEB SERVER #####
+
+# yes/no: start/stop the nginx webserver, enable/disable it on boot
+nginx_enable_service: yes

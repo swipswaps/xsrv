@@ -1,0 +1,8 @@
+---
+
+##### CHECKS FOR NGINX ROLE #####
+
+- name: check that mandatory variables are correctly defined
+  assert:
+    that:
+      - nginx_enable_service == nginx_enable_service|bool

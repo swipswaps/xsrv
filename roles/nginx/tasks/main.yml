@@ -1,0 +1,22 @@
+---
+
+- include: checks.yml
+  tags:
+    - nginx
+
+- include: nginx-ssl-selfsigned.yml
+  become: yes
+  tags:
+    - nginx
+    - certificates
+    - ssl
+
+- include: nginx.yml
+  become: yes
+  tags:
+    - nginx
+
+- name: restart nginx to apply configuration changes
+  meta: flush_handlers
+  tags:
+    - nginx

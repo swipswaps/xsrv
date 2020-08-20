@@ -1,0 +1,70 @@
+---
+
+##### PACKAGES ###################
+
+- name: install nginx/php packages
+  apt:
+    state: present
+    package:
+      - nginx
+      - php-apcu
+      - php
+      - php-fpm
+
+##### MODULES/CONFIGURATON #####
+
+- name: copy nginx2 configuration
+  fail:
+    msg: "TODO"
+  notify: reload nginx
+
+##### VIRTUALHOSTS #####
+
+- name: create documentroot directories for virtualhosts
+  file:
+    state: directory
+    path: "{{ item.documentroot }}"
+    owner: root
+    group: www-data
+    mode: 0750
+  with_items: "{{ nginx_virtualhosts }}"
+
+- name: copy robots.txt
+  template:
+    src: var_www_virtualhost_robots.txt.j2
+    dest: "{{ item.documentroot }}/robots.txt"
+    owner: root
+    group: www-data
+    mode: 0640
+  with_items: "{{ nginx_virtualhosts }}"
+
+- name: copy nginx sites config
+  template:
+    src: etc_nginx2_sites-available_sites.conf.j2
+    dest: /etc/nginx2/sites-available/sites.conf
+    mode: 0644
+  notify: reload nginx
+
+- name: disable default nginx site
+  command: a2dissite 000-default
+  args:
+    removes: /etc/nginx2/sites-enabled/000-default.conf
+  notify: restart nginx
+
+- name: enable nginx sites
+  command: a2ensite sites
+  args:
+    creates: /etc/nginx2/sites-enabled/sites.conf
+  notify: restart nginx
+
+##### SERVICE #####
+
+- name: enable nginx service
+  service: name=nginx2 state=started enabled=yes
+  when: nginx_enable_service|bool
+  tags: services
+
+- name: disable nginx service
+  service: name=nginx2 state=stopped enabled=no
+  when: not nginx_enable_service|bool
+  tags: services
