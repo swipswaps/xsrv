@@ -31,3 +31,10 @@
       - gitea_user_home is string
       - gitea_user_repo_limit == gitea_user_repo_limit|int
       - gitea_version is string
+
+- name: check that postgresql or mariadb roles are enabled
+  debug:
+    msg: "WARNING: postgresql or mariadb roles are not enabled on this host. Deployment will fail unless gitea has been configured to use a remote database host."
+  when:
+      - 'postgresql' not in role_names
+      - 'mariadb' not in role_names
