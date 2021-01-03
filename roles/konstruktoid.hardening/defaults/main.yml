@@ -1,8 +1,5 @@
 ---
 auditd_mode: 1
-dns: "127.0.0.1"
-dnssec: allow-downgrade
-fallback_dns: "1.1.1.1 9.9.9.9"
 fallback_ntp: "2.ubuntu.pool.ntp.org 3.ubuntu.pool.ntp.org"
 fs_modules_blocklist:
   - cramfs
