@@ -22,10 +22,6 @@
   systemd:
     daemon_reload: 'yes'
 
-- name: rkhunter propupd
-  become: 'yes'
-  command: rkhunter --propupd
-
 - name: enable aidecheck
   become: 'yes'
   systemd:
