@@ -1,21 +1,3 @@
-# ansible-role-hardening
-
-Ansible role to make a CentOS, Debian, Fedora or Ubuntu server a bit more
-secure, [systemd edition](https://freedesktop.org/wiki/Software/systemd/).
-
-Requires [Ansible](https://www.ansible.com/) >= 2.8.
-
-Available on [Ansible Galaxy](https://galaxy.ansible.com/konstruktoid/hardening).
-
-## Distributions Tested using Vagrant
-
-```yaml
-bento/debian-10
-bento/fedora-31
-centos/8
-ubuntu/bionic64
-ubuntu/focal64
-```
 
 ## Role Variables with defaults
 
@@ -34,19 +16,6 @@ grub_audit_cmdline: "audit=1"
 
 Enable `auditd` at boot using Grub.
 
-### DNS
-
-```yaml
-dns: "127.0.0.1"
-dnssec: allow-downgrade
-fallback_dns: "1.1.1.1 9.9.9.9"
-```
-
-IPv4 and IPv6 addresses to use as system and fallback DNS servers.
-If `dnssec` is set to "allow-downgrade" DNSSEC validation is attempted, but if
-the server does not support DNSSEC properly, DNSSEC mode is automatically
-disabled. [systemd](https://github.com/konstruktoid/hardening/blob/master/systemd.adoc#etcsystemdresolvedconf)
-option.
 
 ### Disabled File System kernel modules
 
