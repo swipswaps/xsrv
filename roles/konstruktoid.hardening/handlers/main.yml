@@ -60,14 +60,6 @@
   apt:
     autoclean: 'yes'
 
-- name: mask apport
-  become: 'yes'
-  systemd:
-    name: apport.service
-    masked: 'yes'
-    enabled: 'no'
-    state: stopped
-
 - name: mask motdnews
   become: 'yes'
   systemd:
