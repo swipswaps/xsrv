@@ -75,7 +75,6 @@ packages_debian:
   - needrestart
   - openssh-server
   - postfix
-  - rkhunter
   - rsyslog
   - secureboot-db
   - tcpd
