@@ -1,0 +1,48 @@
+# list of libvirt networks
+# see https://libvirt.org/formatnetwork.html and https://docs.ansible.com/ansible/latest/collections/community/libvirt/virt_net_module.html
+# required attributes: name, mac_address, forward_dev, bridge_name, ip_address, netmask, dhcp_start, dhcp_end, autostart, state
+# Example:
+# libvirt_networks:
+#  - name: default
+#    mac_address: "52:54:00:4f:b1:01"
+#    forward_dev: "eth0"
+#    bridge_name: "virbr2"
+#    ip_address: "10.0.100.1"
+#    netmask: "255.255.255.0"
+#    dhcp_start: "10.0.100.128"
+#    dhcp_end: "10.0.100.254"
+#    autostart: yes # optional, default yes
+#    state: active # optional, default active
+libvirt_networks: []
+
+# list of libvirt storage pools
+# See TODO and TODO
+# Example:
+# libvirt_storage_pools:
+#  - name: pool0
+#    path: /var/lib/libvirt/pools/pool0
+#    mode: "0750" # optional, QUOTED default 0750
+#    owner_uid: "1003" # optional, QUOTED default 0 (root)
+#    group_gid: "1003" # optional, QUOTED default 0 (root)
+#    autostart: yes # optional, default yes
+#    state: inactive # optional, default active
+libvirt_storage_pools: []
+
+
+# list of libvirt VMs
+# See https://libvirt.org/formatdomain.html and https://docs.ansible.com/ansible/latest/collections/community/libvirt/virt_module.html
+# required attributes: name, mem_mb, vcpu, disk_file, autostart, mac_address, network
+# Example:
+# libvirt_vms:
+#  - name: 01.xlx.lan
+#    mem_mb: 128
+#    vcpu: 1
+#    disk_file: '01.xlx.lan.qcow2'
+#    autostart: yes
+#    mac_address: '52:54:00:5d:41:01'
+#    network: 'default'
+#    autostart: yes # optional, default yes
+libvirt_vms: []
+
+
+

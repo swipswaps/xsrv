@@ -36,6 +36,7 @@
 - [docker](roles/docker) - Docker container platform
 - [rocketchat](roles/rocketchat) - Realtime web chat/communication platform
 - [jellyfin](roles/jellyfin) - Media System that puts you in control of managing and streaming your media
+- [libvirt](roles/libvirt) - manage virtual machines, storage and network (KVM hypervisor)
 
 [![](https://screenshots.debian.net/screenshots/000/015/229/thumb.png)](roles/monitoring)
 [![](https://i.imgur.com/PPVIb6V.png)](roles/nextcloud)

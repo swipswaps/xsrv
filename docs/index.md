@@ -31,8 +31,8 @@
 - [openldap](https://gitlab.com/nodiscc/xsrv/-/tree/master/roles/openldap) - LDAP directory server and web administration tools
 - [docker](https://gitlab.com/nodiscc/xsrv/-/tree/master/roles/docker) - Docker container platform
 - [rocketchat](https://gitlab.com/nodiscc/xsrv/-/tree/master/roles/rocketchat) - Realtime web chat/communication platform
+- [libvirt](https://gitlab.com/nodiscc/xsrv/-/tree/master/roles/libvirt) - manage virtual machines, storage and network (KVM hypervisor)
 
-<!-- TODO link to roles on gitlab -->
 [![](https://screenshots.debian.net/screenshots/000/015/229/thumb.png)](roles/monitoring)
 [![](https://i.imgur.com/PPVIb6V.png)](roles/nextcloud)
 [![](https://i.imgur.com/UoKs3x1.png)](roles/tt_rss)
