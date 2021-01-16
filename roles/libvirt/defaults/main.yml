@@ -30,8 +30,11 @@ libvirt_storage_pools: []
 
 
 # list of libvirt VMs
-# See https://libvirt.org/formatdomain.html and https://docs.ansible.com/ansible/latest/collections/community/libvirt/virt_module.html
+# https://libvirt.org/formatdomain.html
+# https://docs.ansible.com/ansible/latest/collections/community/libvirt/virt_module.html
+# https://manpages.debian.org/virsh
 # required attributes: name, mem_mb, vcpu, disk_file, autostart, mac_address, network
+# to delete a VM, set its state: to 'absent', and optionally one of the following attributes (yes/no): remove_all_storage, delete_snapshots
 # Example:
 # libvirt_vms:
 #  - name: 01.xlx.lan
@@ -42,6 +45,9 @@ libvirt_storage_pools: []
 #    mac_address: '52:54:00:5d:41:01'
 #    network: 'default'
 #    autostart: yes # optional, default yes
+#  - name: remove-this-vm
+#    state: absent
+#    remove_all_storage: yes
 libvirt_vms: []
 
 

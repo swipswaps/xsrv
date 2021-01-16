@@ -44,5 +44,7 @@
     command: define
     xml: "{{ lookup('template', 'vm.xml.j2' ) }}"
     autostart: "{{ item.autostart | default(True) }}"
+  when: item.state == 'present'
   with_items: "{{ libvirt_vms }}"
 
+- name: delete virtual machines
