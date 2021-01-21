@@ -47,4 +47,4 @@
   when: item.state == 'present'
   with_items: "{{ libvirt_vms }}"
 
-- name: delete virtual machines
+#- name: delete virtual machines # TODO
