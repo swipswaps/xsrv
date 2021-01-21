@@ -8,9 +8,11 @@
   <bridge name='{{ item.bridge_name }}' stp='on' delay='0'/>
   <mac address='{{ item.mac_address }}'/>
   <ip address='{{ item.ip_address }}' netmask='{{ item.netmask }}'>
+{% if item.dhcp_start is defined %}
     <dhcp>
       <range start='{{ item.dhcp_start }}' end='{{ item.dhcp_end }}'/>
     </dhcp>
+{% endif %}
   </ip>
 </network>
 

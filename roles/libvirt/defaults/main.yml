@@ -1,7 +1,7 @@
 # list of libvirt networks
 # see https://libvirt.org/formatnetwork.html and https://docs.ansible.com/ansible/latest/collections/community/libvirt/virt_net_module.html
 # required attributes: name, mac_address, bridge_name, ip_address, netmask, dhcp_start, dhcp_end, autostart, state
-# optional attributes: forward_dev (NAT device)
+# optional attributes: forward_dev (NAT device), dhcp_start/end (DHCP range)
 # Example:
 # libvirt_networks:
 #  - name: default
