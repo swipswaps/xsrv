@@ -1,8 +1,10 @@
 <network>
   <name>{{ item.name }}</name>
+{% if item.forward_dev is defined %}
   <forward dev='{{ item.forward_dev }}' mode='nat'>
     <interface dev='{{ item.forward_dev }}'/>
   </forward>
+{% endif %}
   <bridge name='{{ item.bridge_name }}' stp='on' delay='0'/>
   <mac address='{{ item.mac_address }}'/>
   <ip address='{{ item.ip_address }}' netmask='{{ item.netmask }}'>
