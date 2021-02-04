@@ -18,3 +18,10 @@ galaxy_info:
     - wiki
     - vcs
     - web
+dependencies:
+  # - common
+  # - backup
+  - apache or xsrv.xsrv.apache
+  - { role: mariadb or xsrv.xsrv.mariadb, when: gitea_db_type == "mysql" }
+  - { role: postgresql or xsrv.xsrv.postgresql, when: gitea_db_type == "postgres" }
+

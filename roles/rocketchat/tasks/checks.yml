@@ -1,3 +1,5 @@
+##### CHECKS FOR ROCKETCHAT ROLE #####
+
 - name: check that mandatory variables are correctly defined
   assert:
     that:

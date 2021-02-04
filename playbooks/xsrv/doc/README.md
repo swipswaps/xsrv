@@ -1,62 +1,22 @@
-# Notes
+# ansible-playbook-default
 
-## Networking
+Usage: `xsrv COMMAND default [HOST]`
 
-Network diagram:  
-![](diagram.png)
-
-Source ([Dia]((https://packages.debian.org/buster/dia)): [diagram.dia](diagram.dia)
-
-Notes about configuration for any special appliances, IP address management, general guidelines...
-
-
-## Servers
-
-Managed by ansible: [inventory](../inventory.yml), [playbook](../playbook.yml), [host_vars](../host_vars/)
-
-
-## Workstations
-
-Notes about workstations (setup/maintenance procedures, inventory/lifeycle information...)
-
-
-## Printers
-
-Notes about printers (setup/maintenance procedures, inventory/lifeycle information...)
-
-
-## Printers
-
-Notes about printers (setup/maintenance procedures, inventory/lifeycle information...)
+[inventory](inventory.yml) · [playbook](playbook.yml) · [host variables](host_vars/) · [group variables](group_vars/)· [keyring](default.kdbx)
 
 <!--
-| Name                  | Adress       | Location            | Password          | Web                |
-|-----------------------|--------------|---------------------|-------------------|--------------------|
-| C3350                 | 10.0.0.1     | Office1             | 00112233          | http://10.0.0.1    |
-| C3351                 | 10.0.0.2     | Office2             | 00112233          | http://10.0.0.2    |
-| C4444                 | 10.0.0.3     | Hall1               | 00112233          | http://10.0.0.3    |
+## Monitoring
+insert netdata badges here
 -->
 
-## Phones
-
-Notes about phones (setup/maintenance procedures, inventory/lifeycle information...)
-
-
-## Cameras
-
-Notes about cameras (setup/maintenance procedures, inventory/lifeycle information...)
-
-
-## Specialized hardware
-
-Notes about special hardware, storage appliances... (setup/maintenance procedures, inventory/lifeycle information...)
-
-
-## Licenses
-
-Notes about license management (license numbers, scope, users, duration ...)
-
-
-## General INFO/NOTES
-
-General notes.
+<!-- ## Documentation -->
+<!-- ![](diagram.png) Source ([Dia]((https://packages.debian.org/buster/dia)): [diagram.dia](diagram.dia) -->
+<!-- - **Networking:** All IP addresses are static. There is a single network 192.168.0.0/24. Routing/NAT/firewall: [PFSENSE.md](PFSENSE.md) -->
+<!-- - **Provisioning/removing hosts: [PROXMOX.md](PROXMOX.md), [DEBIAN-SERVER-SETUP.md](DEBIAN-SERVER-SETUP.md) -->
+<!-- - **Workstations:** [WORKSTATION-DEBIAN.md](WORKSTATION-DEBIAN.md); [WORKSTATION-WINDOWS.md](WORKSTATION-WINDOWS.md) -->
+<!-- - **Printers:** [PRINTERS.md](PRINTERS.md) -->
+<!-- - **Phones:** [PHONES.md](PHONES.md) -->
+<!-- - **Cameras:** [CAMERAS.md](CAMERAS.md) -->
+<!-- - **Appliances:** [APPLIANCES.md](APPLIANCES.md) -->
+<!-- - **Licenses: [LICENSES.md](LICENSES.md) -->
+<!-- - **Maintenance:** [MAINTENANCE.md](MAINTENANCE.md) -->

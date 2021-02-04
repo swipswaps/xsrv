@@ -1,0 +1,3 @@
+dependencies:
+  # - common
+  - { role: openldap or xsrv.xsrv.openldap, when: samba_passdb_backend == 'ldapsam' }

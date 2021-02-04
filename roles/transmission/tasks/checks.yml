@@ -1,6 +1,6 @@
 ##### CHECKS FOR TRANSMISSION ROLE #####
 
-- name: check that mandatory variables are correctly defined
+- name: check that required variables/roles are correctly defined/enabled
   assert:
     that:
       - transmission_download_dir is not search("CHANGEME")

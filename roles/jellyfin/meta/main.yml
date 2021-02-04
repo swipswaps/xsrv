@@ -1,0 +1,5 @@
+dependencies:
+    # - common or xsrv.xsrv.common
+    # - monitoring or xsrv.xsrv.monitoring
+    - apache or xsrv.xsrv.apache
+

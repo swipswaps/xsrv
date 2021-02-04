@@ -15,7 +15,7 @@ galaxy_info:
     - conference
     - instant
     - messaging
-
 dependencies:
-  - 'common'
-  - 'apache'
+    # - backup
+    - apache or xsrv.xsrv.apache
+    - docker or xsrv.xsrv.docker
