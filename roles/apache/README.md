@@ -27,10 +27,10 @@ Example Playbook
 ----------------
 
 ```yaml
-- hosts: my.example.org
+- hosts: my.CHANGEME.org
   roles:
-     - common
-     - apache
+     - nodiscc.xsrv.common
+     - nodiscc.xsrv.apache
 ```
 
 Usage

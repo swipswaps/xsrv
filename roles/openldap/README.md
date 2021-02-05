@@ -14,11 +14,11 @@ See [meta/main.yml](meta/main.yml)
 # playbook.yml
 - hosts: my.example.org
   roles:
-    - common # fail2ban bruteforce protection
-    - backup # (optional) automatic backups
-    - monitoring # (optional) automatic backups
-    - apache # (optional, if openldap_setup_lam: yes) webserver, PHP interpreter and SSL certificates
-    - openldap
+    - nodiscc.xsrv.common # fail2ban bruteforce protection
+    - nodiscc.xsrv.monitoring # (optional)
+    - nodiscc.xsrv.backup # (optional) automatic backups
+    - nodiscc.xsrv.apache # (optional, if openldap_setup_lam: yes) webserver, PHP interpreter and SSL certificates
+    - nodiscc.xsrv.openldap
 
 # host_vars/my.CHANGEME.org/my.CHANGEME.org.yml
 openldap_fqdn: "ldap.CHANGEME.org"

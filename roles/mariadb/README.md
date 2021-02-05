@@ -9,11 +9,11 @@ See [meta/main.yml](defaults/main.yml)
 
 ```yaml
 # playbook.yml
-- hosts: my.example.org
+- hosts: my.CHANGEME.org
   roles:
-     - common # optional
-     - backup # (optional, automatic backups)
-     - mariadb
+     - nodiscc.xsrv.common # optional
+     - nodiscc.xsrv.backup # (optional, automatic backups)
+     - nodiscc.xsrv.mariadb
 
 # ansible-vault edit host_vars/my.example.org/my.example.org.vault.yml
 vault_mariadb_root_password: "CHANGEME"

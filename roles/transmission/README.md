@@ -10,13 +10,13 @@ This role will install the [Transmission](https://en.wikipedia.org/wiki/Transmis
 See [meta/main.yml](meta/main.yml)
 
 ```yaml
-- hosts: my.example.org
+- hosts: my.CHANGEME.org
   roles:
-    - common # bruteforce protection
-    - monitoring # (optional)
-    - backup # (optional) automatic backups
-    - apache # webserver/reverse proxy, SSL certificates
-    - transmission
+    - nodiscc.xsrv.common # bruteforce protection
+    - nodiscc.xsrv.monitoring # (optional)
+    - nodiscc.xsrv.backup # (optional) automatic backups
+    - nodiscc.xsrv.apache # webserver/reverse proxy, SSL certificates
+    - nodiscc.xsrv.transmission
 
 # ansible-vault edit host_vars/my.example.org/my.example.org.vault.yml
 vault_transmission_username: "CHANGEME"
@@ -28,12 +28,9 @@ The firewall must allow incoming traffic on `transmission_port` (by default tcp/
 ```yaml
 firehol_networks:
   - name: "global"
-    ...
     allow_input:
-      - ...
       - { name: "transmission", src: "any" }
     allow_output: # outgoing connections
-      - ...
       - { name: "all", dst: "any"}
 ```
 

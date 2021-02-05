@@ -10,9 +10,9 @@ See [`meta/main.yml`](meta/main.yml)
 # playbook.yml
 - hosts: my.CHANGEME.org
   roles:
-    - common
-    - monitoring # optional
-    - docker
+    - nodiscc.xsrv.common
+    - nodiscc.xsrv.monitoring # optional
+    - nodiscc.xsrv.docker
 ```
 
 See [`defaults/main.yml`](meta/main.yml) for all configuration variables.

@@ -20,12 +20,12 @@ See [meta/main.yml](meta/main.yml)
 # playbook.yml
 - hosts: my.CHANGEME.org
   roles:
-    - common # bruteforce prevention
-    - monitoring # (optional)
-    - backup # (optional) automatic backups
-    - postgresql # database engine
-    - apache # webserver, PHP interpreter and SSL certificates
-    - tt_rss
+    - nodiscc.xsrv.common # bruteforce prevention
+    - nodiscc.xsrv.monitoring # (optional)
+    - nodiscc.xsrv.backup # (optional) automatic backups
+    - nodiscc.xsrv.postgresql # database engine
+    - nodiscc.xsrv.apache # webserver, PHP interpreter and SSL certificates
+    - nodiscc.xsrv.tt_rss
 
 # host_vars/my.CHANGEME.org/my.CHANGEME.org.yml  
 tt_rss_fqdn: "rss.CHANGEME.org"

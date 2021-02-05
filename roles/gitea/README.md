@@ -27,11 +27,11 @@ See [meta/main.yml](meta/main.yml)
 ```yaml
 - hosts: my.CHANGEME.org
   roles:
-    - common # bruteforce prevention, SSH
-    - backup # (optional) automatic backups
-    - apache # webserver/reverse proxy, SSL certificates
-    - postgresql # database engine
-    - gitea
+    - nodiscc.xsrv.common # bruteforce prevention, SSH
+    - nodiscc.xsrv.backup # (optional) automatic backups
+    - nodiscc.xsrv.apache # webserver/reverse proxy, SSL certificates
+    - nodiscc.xsrv.postgresql # database engine
+    - nodiscc.xsrv.gitea
   vars:
     gitea_fqdn: "git.CHANGEME.org"
 

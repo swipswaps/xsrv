@@ -40,11 +40,9 @@ Example playbook
 -----------------
 
 ```yaml
-- hosts: my.example.org
+- hosts: my.CHANGEME.org
   roles:
-     - common
-  vars:
-    setup_msmtp: yes
+     - nodiscc.xsrv.common
 
 # host_vars/my.CHANGEME.org/my.CHANGEME.org.yml
 ansible_user: "CHANGEME"

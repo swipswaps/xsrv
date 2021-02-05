@@ -28,10 +28,10 @@ See [meta/main.yml](defaults/main.yml)
 # playbook.yml
 - hosts: my.CHANGEME.org
   roles:
-    - common # optional
-    - backup # (optional) automatic backups
-    - apache or xsrv.xsrv.apache # webserver and SSL/TLS certificates
-    - docker or xsrv.xsrv.docker # docker swarm
+    - nodiscc.xsrv.common # optional
+    - nodiscc.xsrv.backup # (optional) automatic backups
+    - nodiscc.xsrv.apache # webserver and SSL/TLS certificates
+    - nodiscc.xsrv.docker # docker swarm
 
 # host_vars/my.CHANGEME.org/my.CHANGEME.org.yml
 rocketchat_fqdn: chat.CHANGEME.org

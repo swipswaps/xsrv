@@ -14,12 +14,11 @@ See [meta/main.yml](meta/main.yml)
 # playbook.yml
 - hosts: my.CHANGEME.org
   roles:
-    - common # (optional) hardening, firewall
-    - monitoring # (optional)
-    - backup # optional
-    - backup # (optional) automatic backups
-    - apache # (optional) webserver, PHP interpreter and SSL/TLS certificates for ldap-account-manager
-    - samba
+    - nodiscc.xsrv.common # (optional) hardening, firewall
+    - nodiscc.xsrv.monitoring # (optional)
+    - nodiscc.xsrv.backup # optional
+    - nodiscc.xsrv.apache # (optional) webserver, PHP interpreter and SSL/TLS certificates for ldap-account-manager
+    - nodiscc.xsrv.samba
 ```
 
 See [defaults/main.yml](defaults/main.yml) for all configuration variables

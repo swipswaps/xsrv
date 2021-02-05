@@ -26,13 +26,12 @@ Example Playbook
 ```yaml
 - hosts: my.CHANGEME.org
   roles:
-    - common
-    - monitoring
-    - apache
-    - shaarli
-    - rocketchat
-    - ...
-    - homepage
+    - nodiscc.xsrv.common
+    - nodiscc.xsrv.monitoring
+    - nodiscc.xsrv.apache
+    - nodiscc.xsrv.shaarli
+    - nodiscc.xsrv.rocketchat
+    - nodiscc.xsrv.homepage
 
 # host_vars/my.CHANGEME.org/my.CHANGEME.org.yml
 homepage_fqdn: "www.CHANGEME.org"

@@ -16,10 +16,10 @@ See [meta/main.yml](meta/main.yml)
 # playbook.yml
 - hosts: my.CHANGEME.org
   roles:
-    - common # bruteforce prevention
-    - monitoring # (optional)
-    - backup # (optional) automatic backups
-    - postgresql
+    - nodiscc.xsrv.common # bruteforce prevention
+    - nodiscc.xsrv.monitoring # (optional)
+    - nodiscc.xsrv.backup # (optional) automatic backups
+    - nodiscc.xsrv.postgresql
 ```
 
 ## Usage

@@ -21,8 +21,8 @@ See [meta/main.yml](meta/main.yml)
 # playbook.yml
 - hosts: my.CHANGEME.org
   roles:
-    - common # (optional) hardening, SSH
-    - backup
+    - nodiscc.xsrv.common # (optional) hardening, SSH
+    - nodiscc.xsrv.backup
 ```
 
 See [defaults/main.yml](defaults/main.yml) for all configuration variables

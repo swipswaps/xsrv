@@ -36,10 +36,10 @@ Example Playbook
 playbook.yml:
 
 ```yaml
-- hosts: my.example.org
+- hosts: my.CHANGEME.org
   roles:
-    - common
-    - monitoring
+    - nodiscc.xsrv.common
+    - nodiscc.xsrv.monitoring
 ```
 
 Usage

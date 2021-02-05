@@ -21,10 +21,10 @@ See [meta/main.yml](meta/main.yml)
 # playbook.yml
 - hosts: my.CHANGEME.org
   roles:
-    - common # (optional)
-    - monitoring # (optional)
-    - apache # webserver/reverseproxy and SSL/TLS certificates
-    - jellyfin
+    - nodiscc.xsrv.common # (optional)
+    - nodiscc.xsrv.monitoring # (optional)
+    - nodiscc.xsrv.apache # webserver/reverseproxy and SSL/TLS certificates
+    - nodiscc.xsrv.jellyfin
 
 # host_vars/my.CHANGEME.org/my.CHANGEME.org.yml
 jellyfin_fqdn: media.CHANGEME.org

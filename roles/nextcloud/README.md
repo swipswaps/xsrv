@@ -36,11 +36,12 @@ See [meta/main.yml](meta/main.yml)
 ```yaml
 - hosts: my.CHANGEME.org
   roles:
-    - common # fail2ban bruteforce protection
-    # - backup # (optional) automatic backups
-    - apache # webserver, PHP interpreter and SSL certificates
-    - postgresql # database engine
-    - nextcloud
+    - nodiscc.xsrv.common # fail2ban bruteforce protection
+    - nodiscc.xsrv.monitoring # (optional)
+    - nodiscc.xsrv.backup # (optional) automatic backups
+    - nodiscc.xsrv.apache # webserver, PHP interpreter and SSL certificates
+    - nodiscc.xsrv.postgresql # database engine
+    - nodiscc.xsrv.nextcloud
 
 # host_vars/my.example.org/my.example.org.vault.yml
 nextcloud_fqdn: "cloud.CHANGEME.org"
