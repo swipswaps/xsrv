@@ -246,7 +246,7 @@ function upgrade_roles() {
     check_playbook_exists
     if [[ ! -f "$playbook_dir"/requirements.yml ]]; then
         echo "[xsrv] INFO: installing default collection git+https://gitlab.com/nodiscc/xsrv,no-galaxy-deps"
-        (cd "$playbook_dir" & ansible-galaxy collection install --force --collections-path "$playbook_dir/" git+https://gitlab.com/nodiscc/xsrv,release)
+        (cd "$playbook_dir" & ansible-galaxy collection install --force --collections-path "$playbook_dir/" git+https://gitlab.com/nodiscc/xsrv,no-galaxy-deps)
     else
         echo "[xsrv] INFO: upgrading collections from requirements.yml"
         (cd "$playbook_dir" & ansible-galaxy collection install --force -r requirements.yml)
