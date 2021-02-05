@@ -26,9 +26,10 @@ galaxy_info:
     - drive
     - web
 dependencies:
-  - common or xsrv.xsrv.common
-  # backups or xsrv.xsrv.backups
-  - apache or xsrv.xsrv.apache
-  - { role: 'postgresql', when: nextcloud_db_type == "psql" }
-  - { role: 'mariadb', when: nextcloud_db_type == "mysql" }
+  - nodiscc.xsrv.common
+  # - nodiscc.xsrv.monitoring
+  # - nodiscc.xsrv.backup
+  - nodiscc.xsrv.apache
+  - { role: 'nodiscc.xsrv.postgresql', when: nextcloud_db_type == "psql" }
+  - { role: 'nodiscc.xsrv.mariadb', when: nextcloud_db_type == "mysql" }
 

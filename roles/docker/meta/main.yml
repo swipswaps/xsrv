@@ -17,4 +17,5 @@ galaxy_info:
     - compose
     - server
 dependencies:
-  - common or xsrv.xsrv.common
+  - nodiscc.xsrv.common
+  # - nodiscc.xsrv.monitoring

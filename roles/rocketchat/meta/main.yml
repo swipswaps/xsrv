@@ -16,6 +16,6 @@ galaxy_info:
     - instant
     - messaging
 dependencies:
-    # - backup
-    - apache or xsrv.xsrv.apache
-    - docker or xsrv.xsrv.docker
+    # - nodiscc.xsrv.backup
+    - nodiscc.xsrv.apache
+    - nodiscc.xsrv.docker

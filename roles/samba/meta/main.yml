@@ -1,3 +1,4 @@
 dependencies:
-  # - common
-  - { role: openldap or xsrv.xsrv.openldap, when: samba_passdb_backend == 'ldapsam' }
+  # - nodiscc.xsrv.common
+  # - nodiscc.xsrv.backup
+  - { role: nodiscc.xsrv.openldap, when: samba_passdb_backend == 'ldapsam' }

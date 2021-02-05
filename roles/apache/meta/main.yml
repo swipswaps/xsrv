@@ -15,4 +15,4 @@ galaxy_info:
     - server
     - lamp
 dependencies:
-  - ('common' or 'xsrv.xsrv.common')
+  - nodiscc.xsrv.common

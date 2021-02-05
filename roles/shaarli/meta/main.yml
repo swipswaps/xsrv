@@ -17,7 +17,7 @@ galaxy_tags:
   - sharing
   - notes
 dependencies:
-  - common or xsrv.xsrv.common
-  # - backup
-  # - monitoring
-  - apache or xsrv.xsrv.apache
+  - nodiscc.xsrv.common
+  # - nodiscc.xsrv.monitoring
+  # - nodiscc.xsrv.backup
+  - nodiscc.xsrv.apache

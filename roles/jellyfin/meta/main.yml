@@ -1,5 +1,5 @@
 dependencies:
-    # - common or xsrv.xsrv.common
-    # - monitoring or xsrv.xsrv.monitoring
-    - apache or xsrv.xsrv.apache
+    # - nodiscc.xsrv.common
+    # - nodiscc.xsrv..monitoring
+    - nodiscc.xsrv.apache
 

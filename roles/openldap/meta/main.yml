@@ -12,6 +12,6 @@ galaxy_info:
     - directory
     - authentication
 dependencies:
-      - common or xsrv.xsrv.common
-      # - backup or xsrv.xsrv.backup
-      - { role: apache or xsrv.xsrv.apache, when: openldap_setup_lam|bool }
+      - nodiscc.xsrv.common
+      # - nodiscc.xsrv.backup
+      - { role: nodiscc.xsrv.apache, when: openldap_setup_lam|bool }
