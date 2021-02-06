@@ -1,6 +1,8 @@
 #!/usr/bin/env make
 SHELL := '/bin/bash'
 
+all: tests
+
 tests: shellcheck check_readmes check_jinja2 ansible_syntax_check ansible_lint yamllint clean
 
 # Install dev tools in virtualenv
