@@ -5,7 +5,6 @@
     # - nodiscc.xsrv.backup
     # - nodiscc.xsrv.apache
     # - nodiscc.xsrv.openldap
-    # - nodiscc.xsrv.homepage
     # - nodiscc.xsrv.mariadb
     # - nodiscc.xsrv.postgresql
     # - nodiscc.xsrv.nextcloud
@@ -18,3 +17,4 @@
     # - nodiscc.xsrv.rocketchat
     # - nodiscc.xsrv.jellyfin
     # - nodiscc.xsrv.samba
+    # - nodiscc.xsrv.homepage
