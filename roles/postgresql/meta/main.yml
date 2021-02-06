@@ -14,5 +14,5 @@ galaxy_info:
     - postgresql
     - database
 dependencies: []
-  # - nodiscc.xsrv.common
-  # - nodiscc.xsrv.monitoring
+#   - nodiscc.xsrv.common
+#   - nodiscc.xsrv.monitoring
